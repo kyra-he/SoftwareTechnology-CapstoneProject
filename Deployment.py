@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv('TESLA.csv')
+df = pd.read_csv('/Software Technology/Assignment 9 -Capstone/TESLA.csv')
 
 # Title and Description
 st.title("Tesla Stock Price App")
