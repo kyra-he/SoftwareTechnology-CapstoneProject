@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
+import csv
+import tensorflow as tf
+import numpy as np
+from streamlit_option_menu import option_menu
 
-# Load the CSV dataset
-df = pd.read_csv('TESLA.csv')
+with open('filename.csv') as csv_file:
+    csv_read=csv.reader(csv_file, delimiter=',')
 
 # Title and Description
 st.title("Tesla Stock Price App")
