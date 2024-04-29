@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
-import csv
-import numpy as np
 
-with open('TESLA.csv') as csv_file:
-    csv_read=csv.reader(csv_file, delimiter=',')
+df = pd.read_csv('TESLA.csv')
 
 # Title and Description
 st.title("Tesla Stock Price App")
@@ -21,7 +18,8 @@ end_date = st.date_input("End Date", value=pd.to_datetime("2022-09-29"))
 filtered_data = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
 
 # Display filtered data as table
-st.table(filtered_data)
+st.write("Filtered Data:")
+st.write(filtered_data)
 
 # Display charts for Open, High, Low, Close, Adj Close, and Volume
 st.write("""
