@@ -1,26 +1,22 @@
 import streamlit as st
 import pandas as pd
 
+# Load the CSV dataset
 df = pd.read_csv('TESLA.csv')
 
+# Title and Description
+st.title("Tesla Stock Price App")
 st.write("""
-# Tesla Stock Price App
-
 The below charts will show the stock price of Tesla from 2021-09-29 to 2022-09-29.
 Please enter a date to search the stock price. 
 """)
-
-# Fetch Tesla stock data
-tickerSymbol = 'TSLA'
-tickerData = yf.Ticker(tickerSymbol)
-tickerDf = tickerData.history(period='1d', start='2021-09-29', end='2022-09-29')
 
 # Display date input
 start_date = st.date_input("Start Date", value=pd.to_datetime("2021-09-29"))
 end_date = st.date_input("End Date", value=pd.to_datetime("2022-09-29"))
 
 # Filter the data based on selected dates
-filtered_data = tickerDf.loc[start_date:end_date]
+filtered_data = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
 
 # Display filtered data as table
 st.table(filtered_data)
