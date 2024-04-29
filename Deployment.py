@@ -1,11 +1,10 @@
 import streamlit as st
-import yfinance as yf
 import pandas as pd
 
 df = pd.read_csv('TESLA.csv')
 
 st.write("""
-# Tesla Stock Price Research
+# Tesla Stock Price App
 
 The below charts will show the stock price of Tesla from 2021-09-29 to 2022-09-29.
 Please enter a date to search the stock price. 
