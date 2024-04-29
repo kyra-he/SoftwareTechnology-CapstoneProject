@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import csv
 import numpy as np
-from streamlit_option_menu import option_menu
 
 with open('filename.csv') as csv_file:
     csv_read=csv.reader(csv_file, delimiter=',')
