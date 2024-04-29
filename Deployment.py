@@ -3,7 +3,7 @@ import pandas as pd
 import csv
 import numpy as np
 
-with open('filename.csv') as csv_file:
+with open('TESLA.csv') as csv_file:
     csv_read=csv.reader(csv_file, delimiter=',')
 
 # Title and Description
